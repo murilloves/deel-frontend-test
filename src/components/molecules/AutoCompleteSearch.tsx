@@ -8,14 +8,17 @@ interface AutoCompleteSearchProps {
 
 const AutoCompleteSearch: React.FC<AutoCompleteSearchProps> = ({ inputPlaceholder }) => {
   const [searchStr, setSearchStr] = useState<string>("");
+  const [inputFocused, setInputFocused] = useState<boolean>(false);
 
   return (
     <div>
-      <SearchInput setValue={setSearchStr} placeholder={inputPlaceholder} />
-      <SearchResultsList
-        searchStr={searchStr}
-        apiURL={`https://restcountries.com/v3.1/name`}
-      />
+      <SearchInput setFocused={setInputFocused} setValue={setSearchStr} placeholder={inputPlaceholder} />
+      {inputFocused && (
+        <SearchResultsList
+          searchStr={searchStr}
+          apiURL={`https://restcountries.com/v3.1/name`}
+        />
+      )}
     </div>
   );
 };
