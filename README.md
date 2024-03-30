@@ -1,6 +1,6 @@
-# React + Vite + TypeScript Project
+# React TypeScript Project
 
-This is a simple starter template for a React project configured with Vite and TypeScript.
+This is a simple **auto-complete component** React project configured with TypeScript.
 
 ## Prerequisites
 
